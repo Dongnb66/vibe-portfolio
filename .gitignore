@@ -1,0 +1,23 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+
+# 诊断/部署辅助脚本（不进版本库）
+_deploy_serve.cjs
+_fingerprint_serve.cjs
+_serve_with_dir.cjs
+_diag_serve.cjs
+
+# Vite 临时文件
+*.timestamp-*.mjs
+
+# 日志与系统
+*.log
+.DS_Store
+Thumbs.db
+
+# 环境变量
+.env
+.env.local
