@@ -13,7 +13,7 @@ export const profile = {
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
     '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub。',
-    '测试基线：<strong>46 个 pytest</strong>（全 mock 免 API Key）+ <strong>48 个 vitest 覆盖 MCP 工具库</strong>，另有防幻觉评测集挂入 GitHub Actions CI。',
+    '测试基线：<strong>5 个仓库共 261 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>16 条防幻觉评测用例</strong>，全部挂入 GitHub Actions CI。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
 };
@@ -21,7 +21,7 @@ export const profile = {
 export const stats = [
   { num: '5', label: 'GitHub Projects', sub: '全 MIT 开源' },
   { num: '10+', label: 'Agents 设计', sub: 'profile/planner/quiz/...' },
-  { num: '61', label: 'Tests', sub: '13 pytest + 48 vitest · CI 全绿' },
+  { num: '261', label: 'Tests', sub: '5 仓库 · 零 Key 可跑 · CI 全绿' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
@@ -42,7 +42,7 @@ export const projects = [
       'ReAct 自主辅导 Agent：模型自主决定调哪个工具、调几轮、何时停，逐轮留可审计 trace',
       '<strong>防幻觉三道代码级约束</strong>：相关性阈值检索 / 检索为空直接拒答且不调模型 / URL 白名单剔除库外链接',
       '<strong>防幻觉评测集</strong>：零配置可跑（6 用例 / 4 类断言 / JSON 报告），已挂 CI，实测编造链接 0 条',
-      '完整 Dockerfile + docker-compose + pytest 46 passed + .env.example',
+      '完整 Dockerfile + docker-compose + pytest 64 passed + .env.example',
     ],
     github: 'https://github.com/Dongnb66/python-learning-agent',
     demo: 'README + Dockerfile + docker-compose，clone 即跑',
@@ -61,6 +61,8 @@ export const projects = [
       '5 智能体流水线：路由 Router / 发帖引导 PostGuide / 内容审核 Audit / 检索 Search / 撮合 Match',
       '完整账号体系：手机/邮箱/微信/QQ，<strong>首次扫码强校验</strong>',
       '<strong>React 18 + Vite 5 前端</strong>，JWT 双令牌 + RBAC、事务防并发、自实现 TTL+LRU 缓存',
+      '为 5 个智能体补了 <strong>48 项行为测试</strong>：用 fetch 桩把模型换成可控脚本，断言"无 Key 时 0 次请求""模型 500 时违规拦截依然生效"',
+      '<strong>测试查出 2 个真 bug 并修复</strong>：seed 脚本的 process.exit 会杀掉启动中的服务、.env 里的 Key 永远读不到（ESM import 提升导致）',
       'Node 单一 runtime，部署 / 学习 / 二次开发都简单',
     ],
     github: 'https://github.com/Dongnb66/campus-mutual-aid',
@@ -88,13 +90,14 @@ export const projects = [
   {
     id: 'travel-rank',
     name: 'travel-rank · 途见',
-    sub: 'AI · FUNCTION CALLING · 百度地图',
-    memory: 'Function Calling · 真实截图 · 视觉冲击',
-    desc: '旅游口碑聚合 + AI 对话式推荐。<strong>最大亮点是 Function Calling 实战</strong>——AI 主动调用百度地图工具查景点 / 路线 / 周边，口碑榜配桌宠猪猪形象交互。<strong>本作品集唯一有真实运行截图的项目</strong>。',
-    tags: ['Express', '百度地图 API', 'Function Calling', 'TC3 签名', 'SMTP', '原生 SPA'],
-    badges: ['真实运行截图', 'Function Calling'],
+    sub: 'REACT AGENT · TOOL CALLING · 真实截图',
+    memory: 'ReAct 自主决策 · 真实截图',
+    desc: '旅游口碑聚合 + AI 对话式推荐。<strong>最大亮点是 ReAct 式自主决策 Agent</strong>——模型通过 <strong>tool_choice:auto</strong> 自己决定调不调工具、调哪个、够不够、要不要再来一轮（无 tool_calls 即自终止，4 轮上限防失控），可选工具含百度地图搜宝藏地点；口碑榜配桌宠猪猪形象交互。<strong>本作品集唯一有真实运行截图的项目</strong>。',
+    tags: ['Express', 'ReAct Agent', '百度地图 API', 'TC3 签名', 'SMTP', '原生 SPA'],
+    badges: ['真实运行截图', 'ReAct 自主决策'],
     highlights: [
-      '<strong>Function Calling</strong> 实战：AI 主动调百度地图查景点 / 路线',
+      '<strong>ReAct 自主决策循环</strong>：<strong>36 项断言</strong>用 fetch 桩把模型换成可控脚本，逐条验证「决策权真交给模型」「工具结果回灌真实库数据」「模型说停才停」「连续要工具时钉死 4 轮」',
+      '<strong>Function Calling</strong> 实战：AI 主动调百度地图查景点 / 路线 / 宝藏地点',
       '多源口碑聚合 + 权重排序算法',
       '<strong>桌宠猪猪 + 私信通知 + 个人中心抽屉</strong>',
       '<strong>真实运行截图 4 张</strong>：登录 / 口碑榜 / 桌宠对话 / 个人中心',
@@ -117,6 +120,7 @@ export const projects = [
       '<strong>完整交付</strong>：演示视频 + PPT + 答辩文档 + 部署文档',
       '我的<strong>第一个 Agent 项目</strong>，从这开始系统化研究多智能体',
       '内置学习效果实证模块：前后测诊断 + 分主题组卷 + 多次测评纵向追踪知识点掌握度变化',
+      'RAG 辅导把「不瞎编」做成<strong>代码级约束</strong>：知识库与联网都未命中时<strong>直接拒答、一次都不调模型</strong>，出处只从真实检索结果派生（<strong>npm test 12/12、评测集 10/10，不可溯源出处 0、拒答场景模型调用 0</strong>）',
     ],
     github: 'https://github.com/Dongnb66/a3-learning-agent',
     demo: '看 README，竞赛完整文档可现场演示',
@@ -160,7 +164,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', '端到端管线', '官方测试向量', 'ReAct 循环', '防幻觉评测集', '46 passed'],
+    list: ['pytest', '端到端管线', '官方测试向量', 'ReAct 循环', '防幻觉评测集', '64 passed'],
   },
   {
     icon: '🚀',
