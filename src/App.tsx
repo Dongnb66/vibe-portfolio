@@ -238,7 +238,7 @@ function About() {
       </h2>
       <p className="section-desc reveal">
         不是只跑通 demo，而是把每个项目当作作品集交付 ——
-        README 中英双语、Dockerfile 一键启动、13 个 pytest 全 mock 通过、签名对照官方测试向量。
+        README 中英双语、Dockerfile 一键启动、46 个 pytest 全 mock 通过、防幻觉评测集挂进 CI、签名对照官方测试向量。
       </p>
 
       <div className="about">
