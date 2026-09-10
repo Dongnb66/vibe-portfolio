@@ -1,5 +1,5 @@
-// 简历 / 作品集数据 — 来源：杨运栋 简历 + 4 个 GitHub 开源项目
-// 4 个项目各设一个"最强记忆点"，避免同质化
+// 简历 / 作品集数据 — 来源：杨运栋 简历 + 5 个 GitHub 开源项目
+// 5 个项目各设一个"最强记忆点"，避免同质化
 
 export const profile = {
   name: '杨运栋',
@@ -12,33 +12,34 @@ export const profile = {
   goal: 'AI Agent 后端开发工程师 · 多智能体 / RAG / LLM 应用工程',
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
-    '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 4 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub。',
-    '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。正在为 2027 年暑期实习做准备，期望能找到初级 AI 后端实习岗位，能立即到岗、独立交付。',
+    '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub。',
+    '测试基线：13 个 pytest（全 mock 免 API Key）+ <strong>48 个 vitest 覆盖 MCP 工具库</strong>，GitHub Actions CI 全绿。',
+    '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。**日常实习可立即到岗**，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
 };
 
 export const stats = [
-  { num: '4', label: 'GitHub Projects', sub: '全 MIT 开源' },
-  { num: '15+', label: 'Agents 设计', sub: 'planner/profile/quiz/...' },
-  { num: '20+', label: 'Test Cases', sub: 'auth/TC3 sig/RAG' },
-  { num: '2027', label: '求职窗口', sub: '3–5 月暑期实习' },
+  { num: '5', label: 'GitHub Projects', sub: '全 MIT 开源' },
+  { num: '10+', label: 'Agents 设计', sub: 'profile/planner/quiz/...' },
+  { num: '61', label: 'Tests', sub: '13 pytest + 48 vitest · CI 全绿' },
+  { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
-// 4 个项目差异化：每个项目一个"最强记忆点"
+// 5 个项目差异化：每个项目一个"最强记忆点"
 export const projects = [
   {
     id: 'python-learning-agent',
     name: 'python-learning-agent',
     sub: 'BACKEND · AGENT ENGINEERING',
     memory: '主推 · 求职主项目 · 后端工程化',
-    desc: '基于 LangGraph 的多智能体学习助手后端，规划智能体调度 5 个子智能体协同完成"诊断—规划—出题—资源—复盘"全流程。**强项不在前端，在于工程化交付**——签名、记忆、测试、部署一气呵成。',
+    desc: '基于 LangGraph 的多智能体学习助手后端，7 节点状态图编排 5 个 LLM 智能体 + 2 个记忆节点，完成"记忆读取—诊断—规划—出题—资源—复盘—记忆沉淀"全流程。**强项不在前端，在于工程化交付**——签名、记忆、测试、部署一气呵成。',
     tags: ['Python', 'LangGraph', 'FastAPI', 'RAG', 'DeepSeek', 'JWT', 'TC3-HMAC', '三层记忆'],
     badges: ['主推 · 求职主项目', '后端工程化'],
     highlights: [
-      '规划智能体调度 Profile/Quiz/Resource/Review 5 智能体协同',
-      '三层记忆：短期上下文 / 长期向量记忆 / 用户画像 JSON',
+      'LangGraph 7 节点：load_memory → profile → planner → resource → quiz → review → save_memory',
+      '三层记忆：短期上下文 AgentState / 长期画像 profiles 表 / 学情轨迹 learning_sessions 表',
       '自实现腾讯云短信 TC3-HMAC-SHA256 签名，**零 SDK 依赖**',
-      '11/11 端到端账号流程 + 4/4 TC3 签名向量测试',
+      'pytest 13 passed：5 画像 + 4 TC3 官方向量 + 3 跨会话记忆 + 1 端到端，全 mock 免 Key',
       '完整 Dockerfile + docker-compose + pytest + .env.example',
     ],
     github: 'https://github.com/Dongnb66/python-learning-agent',
@@ -52,17 +53,35 @@ export const projects = [
     sub: 'MULTI-AGENT · PIPELINE · SPA',
     memory: '多智能体工程化 · 流水线',
     desc: '校园互助平台：多智能体流水线处理求助 / 资源 / 失物招领，配合作风评分机制。**最大亮点是多智能体的"工程化"落地**——智能路由、评分反馈、抗滥用，不是 demo 而是能跑。',
-    tags: ['Node.js', 'Express', 'node:sqlite', '多智能体', 'SMTP', 'TC3 签名', '原生 SPA'],
+    tags: ['Node.js', 'Express', 'node:sqlite', '多智能体', 'SMTP', 'TC3 签名', 'React 18'],
     badges: ['多智能体工程化'],
     highlights: [
-      '多智能体流水线 + **智能路由** + **评分反馈** + 抗滥用',
+      '5 智能体流水线：路由 Router / 发帖引导 PostGuide / 内容审核 Audit / 检索 Search / 撮合 Match',
       '完整账号体系：手机/邮箱/微信/QQ，**首次扫码强校验**',
-      '**原生前端 SPA**：无第三方框架（不引 React/Vue）',
+      '**React 18 + Vite 5 前端**，JWT 双令牌 + RBAC、事务防并发、自实现 TTL+LRU 缓存',
       'Node 单一 runtime，部署 / 学习 / 二次开发都简单',
     ],
     github: 'https://github.com/Dongnb66/campus-mutual-aid',
     demo: 'clone 后 npm i && node server.js 即跑',
     cover: 'campus',
+  },
+  {
+    id: 'mcp-toolkit',
+    name: 'mcp-toolkit',
+    sub: 'MCP PROTOCOL · TYPESCRIPT · STDIO',
+    memory: 'MCP 协议工程 · 工具资产复用 · 48 单测',
+    desc: '把散落各项目的手写工具能力，标准化为 8 个即插即用的 MCP 工具服务器。**从 function calling 到 MCP 协议**：travel-rank 的聚合排名、python 项目的 TC3 签名器直接复用为零重构的标准工具。',
+    tags: ['TypeScript', 'MCP 协议', 'JSON-RPC', 'zod', 'stdio', '48 单测'],
+    badges: ['MCP 协议工程', '工具资产复用', '48 单测'],
+    highlights: [
+      '官方 MCP SDK + TypeScript：**McpServer + StdioServerTransport（JSON-RPC over stdio）**，任意宿主即插即用',
+      '8 工具：热度聚合排名 / TC3 签名 / 只读 SQLite / 网页抽取 / 文本切块 / 日期计算 / JWT 验签 / 探活',
+      '**lib/tools 分层铁律**：lib 层纯函数零 MCP 依赖，tools 层只做 zod 校验 + 转发',
+      '**48 个 vitest 单测全绿** + GitHub Actions CI（typecheck + build + test）',
+    ],
+    github: 'https://github.com/Dongnb66/mcp-toolkit',
+    demo: 'npm i && npm run dev，接 MCP Inspector 即跑',
+    cover: 'mcp',
   },
   {
     id: 'travel-rank',
@@ -87,15 +106,15 @@ export const projects = [
     name: 'a3-learning-agent',
     sub: 'COMPETITION · FULL-STACK · DELIVERY',
     memory: '竞赛全栈 · 完整交付 · React 前端',
-    desc: '中国软件杯 A3 赛道独立参赛作品。**与 python-learning-agent 的最大区别在"前端 + 完整交付"**——React + Vite 前端 + Node + Express 后端，附带完整演示视频、PPT、答辩文档。栋的**第一个完整 Agent 项目**。',
+    desc: '**本项目是 python-learning-agent 的业务原型**：软件杯验证业务闭环后，用 Python 现代栈重写为主项目，两代技术栈演进是一体的故事。中国软件杯 A3 赛道独立参赛作品。**与 python-learning-agent 的最大区别在"前端 + 完整交付"**——React + Vite 前端 + Node + Express 后端，附带完整演示视频、PPT、答辩文档。我的**第一个完整 Agent 项目**。',
     tags: ['React', 'Vite', 'Node.js', 'Express', 'RAG', 'DeepSeek', '多智能体', '软件杯'],
     badges: ['竞赛独立参赛', '完整交付'],
     highlights: [
-      '**中国软件杯 A3 赛道**独立参赛（不是合作项目）',
+      '**中国软件杯 A3 赛道** · DOKI 队队长（唯一成员），一人扛全栈',
       '**全栈**：React + Vite 前端（与 python-only 后端版互补）',
       '**完整交付**：演示视频 + PPT + 答辩文档 + 部署文档',
-      '栋的**第一个 Agent 项目**，从这开始系统化研究多智能体',
-      'GitHub 作品集首推，简历链接已挂',
+      '我的**第一个 Agent 项目**，从这开始系统化研究多智能体',
+      '内置学习效果实证页：测试组 6 人前后测平均 **+27 分**（全简历唯一效果量化）',
     ],
     github: 'https://github.com/Dongnb66/a3-learning-agent',
     demo: '看 README，竞赛完整文档可现场演示',
@@ -115,7 +134,7 @@ export const skills = [
     icon: '🔍',
     name: 'RAG 防幻觉',
     desc: '检索增强生成 + 引用溯源，让回答可查证、可回落',
-    list: ['RAG', '向量检索', 'context 压缩', '引用标注'],
+    list: ['RAG', 'BM25 稀疏检索', 'context 压缩', '引用标注'],
   },
   {
     icon: '🛡️',
@@ -138,8 +157,8 @@ export const skills = [
   {
     icon: '🧪',
     name: '测试驱动交付',
-    desc: '端到端账号流程 + 签名向量测试，交付前可自动验证',
-    list: ['pytest', '端到端测试', '签名向量比对', '11/11 + 4/4'],
+    desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
+    list: ['pytest', '端到端管线', '官方测试向量', '13 passed'],
   },
   {
     icon: '🚀',
@@ -158,5 +177,11 @@ export const skills = [
     name: 'Function Calling',
     desc: '让 AI 主动调用外部工具（地图/查询）完成任务',
     list: ['工具调用', '百度地图 API', '参数校验', '结果回填'],
+  },
+  {
+    icon: '🧩',
+    name: 'MCP 协议开发',
+    desc: '把 function calling 工具标准化为 MCP 协议工具服务器，任意宿主跨项目复用',
+    list: ['TypeScript', 'JSON-RPC', 'zod', 'stdio transport'],
   },
 ];
