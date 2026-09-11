@@ -174,7 +174,7 @@ Done. push 36 files / +3110 lines.`}
         <p className="hero-sub">
           {profile.name} · {profile.school} {profile.major} {profile.grade}<br />
           专注于 {profile.goal}。<br />
-          已独立完成 <strong>5 个开源项目</strong>，LangGraph / FastAPI / Express / RAG / DeepSeek 全栈落地。
+          已独立完成 <strong>4 个开源项目</strong>，LangGraph / FastAPI / Express / RAG / DeepSeek 全栈落地。
         </p>
 
         <div className="hero-cta">
@@ -248,7 +248,7 @@ function About() {
           ))}
           <p>
             日常实习可立即到岗，同时重点准备 2027 年 3–5 月的暑期实习招聘窗口。
-            已独立交付 <strong>5 个 MIT 开源项目</strong>，熟悉 LangGraph / FastAPI / Express / RAG / DeepSeek 全栈，
+            已独立交付 <strong>4 个 MIT 开源项目</strong>，熟悉 LangGraph / FastAPI / Express / RAG / DeepSeek 全栈，
             能从 0 到 1 完成后端工程化交付。
           </p>
         </div>
@@ -272,11 +272,11 @@ function Projects() {
     <section id="projects" className="section">
       <div className="section-eyebrow">02 · WORKS</div>
       <h2 className="section-title reveal">
-        5 个 <span className="grad">开源项目</span>，<br />
+        4 个 <span className="grad">开源项目</span>，<br />
         全 MIT License
       </h2>
       <p className="section-desc reveal">
-        简历里写的"5 个开源项目，全 MIT License，面试可直接 clone 现场跑通"——
+        简历里写的"4 个开源项目，全 MIT License，面试可直接 clone 现场跑通"——
         这是每一个项目的真实状态，不是话术。
       </p>
 
