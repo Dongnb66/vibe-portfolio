@@ -1,5 +1,5 @@
-// 简历 / 作品集数据 — 来源：杨运栋 简历 + 5 个 GitHub 开源项目
-// 5 个项目各设一个"最强记忆点"，避免同质化
+// 简历 / 作品集数据 — 来源：杨运栋 简历 v18 + 4 个 GitHub 开源项目（A3 已从求职材料除名）
+// 4 个项目各设一个"最强记忆点"，避免同质化
 
 export const profile = {
   name: '杨运栋',
@@ -12,37 +12,39 @@ export const profile = {
   goal: 'AI Agent 后端开发工程师 · 多智能体 / RAG / LLM 应用工程',
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
-    '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub。',
-    '测试基线：<strong>5 个仓库共 261 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>16 条防幻觉评测用例</strong>，全部挂入 GitHub Actions CI。',
+    '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 4 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub。',
+    '测试基线：<strong>4 个仓库共 268 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>6 条防幻觉评测用例</strong>，全部挂入 GitHub Actions CI。',
+    'AI Coding 工作流：以 <strong>WorkBuddy</strong> 等智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
 };
 
 export const stats = [
-  { num: '5', label: 'GitHub Projects', sub: '全 MIT 开源' },
+  { num: '4', label: 'GitHub Projects', sub: '全 MIT 开源' },
   { num: '10+', label: 'Agents 设计', sub: 'profile/planner/quiz/...' },
-  { num: '261', label: 'Tests', sub: '5 仓库 · 零 Key 可跑 · CI 全绿' },
+  { num: '268', label: 'Tests', sub: '4 仓库 · 零 Key 可跑 · CI 全绿' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
-// 5 个项目差异化：每个项目一个"最强记忆点"
+// 4 个项目差异化：每个项目一个"最强记忆点"
 export const projects = [
   {
     id: 'python-learning-agent',
     name: 'python-learning-agent',
     sub: 'BACKEND · AGENT ENGINEERING',
     memory: '主推 · 求职主项目 · 后端工程化',
-    desc: '基于 LangGraph 的多智能体学习助手后端，8 节点状态图编排 5 个 LLM 智能体 + 2 个记忆节点 + 1 个 ReAct 自主辅导 Agent，完成"记忆读取—诊断—规划—出题—资源—复盘—自主辅导—记忆沉淀"全流程。<strong>强项不在前端，在于工程化交付</strong>——签名、记忆、测试、部署一气呵成。',
-    tags: ['Python', 'LangGraph', 'FastAPI', 'RAG', 'DeepSeek', 'JWT', 'TC3-HMAC', '三层记忆'],
+    desc: '基于 LangGraph 的多智能体学习助手：8 节点状态图编排 5 个 LLM 智能体 + 2 个记忆节点 + 1 个 ReAct 自主辅导 Agent，完成"记忆读取—诊断—规划—出题—资源—复盘—自主辅导—记忆沉淀"全流程；配 <strong>React 用户端 9 页面</strong>（画像对话 / 资源生成 / 学习路径 / 智能辅导 / 前后测实证等），<strong>前后端一体、面试可完整演示</strong>。',
+    tags: ['Python', 'LangGraph', 'FastAPI', 'RAG', 'React', 'DeepSeek', 'JWT', 'TC3-HMAC', '三层记忆'],
     badges: ['主推 · 求职主项目', '后端工程化'],
     highlights: [
       'LangGraph 8 节点 + 条件边：load_memory → … → review →(有薄弱项) tutor → save_memory',
       '三层记忆：短期上下文 AgentState / 长期画像 profiles 表 / 学情轨迹 learning_sessions 表',
       '自实现腾讯云短信 TC3-HMAC-SHA256 签名，<strong>零 SDK 依赖</strong>',
       'ReAct 自主辅导 Agent：模型自主决定调哪个工具、调几轮、何时停，逐轮留可审计 trace',
+      '<strong>React 用户端 9 页面</strong> + /api 兼容层 19 端点，Gradio / Swagger / React 三种演示入口',
       '<strong>防幻觉三道代码级约束</strong>：相关性阈值检索 / 检索为空直接拒答且不调模型 / URL 白名单剔除库外链接',
       '<strong>防幻觉评测集</strong>：零配置可跑（6 用例 / 4 类断言 / JSON 报告），已挂 CI，实测编造链接 0 条',
-      '完整 Dockerfile + docker-compose + pytest 64 passed + .env.example',
+      '完整 Dockerfile + docker-compose + pytest 83 passed + .env.example',
     ],
     github: 'https://github.com/Dongnb66/python-learning-agent',
     demo: 'README + Dockerfile + docker-compose，clone 即跑',
@@ -106,26 +108,6 @@ export const projects = [
     demo: '本作品集 Hero 区有 4 张真实运行截图',
     cover: 'travel',
   },
-  {
-    id: 'a3-learning-agent',
-    name: 'a3-learning-agent',
-    sub: 'COMPETITION · FULL-STACK · DELIVERY',
-    memory: '竞赛全栈 · 完整交付 · React 前端',
-    desc: '<strong>本项目是 python-learning-agent 的业务原型</strong>：软件杯验证业务闭环后，用 Python 现代栈重写为主项目，两代技术栈演进是一体的故事。中国软件杯 A3 赛道独立参赛作品。<strong>与 python-learning-agent 的最大区别在"前端 + 完整交付"</strong>——React + Vite 前端 + Node + Express 后端，附带完整演示视频、PPT、答辩文档。我的<strong>第一个完整 Agent 项目</strong>。',
-    tags: ['React', 'Vite', 'Node.js', 'Express', 'RAG', 'DeepSeek', '多智能体', '软件杯'],
-    badges: ['竞赛独立参赛', '完整交付'],
-    highlights: [
-      '<strong>中国软件杯 A3 赛道</strong> · DOKI 队队长（唯一成员），一人扛全栈',
-      '<strong>全栈</strong>：React + Vite 前端（与 python-only 后端版互补）',
-      '<strong>完整交付</strong>：演示视频 + PPT + 答辩文档 + 部署文档',
-      '我的<strong>第一个 Agent 项目</strong>，从这开始系统化研究多智能体',
-      '内置学习效果实证模块：前后测诊断 + 分主题组卷 + 多次测评纵向追踪知识点掌握度变化',
-      'RAG 辅导把「不瞎编」做成<strong>代码级约束</strong>：知识库与联网都未命中时<strong>直接拒答、一次都不调模型</strong>，出处只从真实检索结果派生（<strong>npm test 12/12、评测集 10/10，不可溯源出处 0、拒答场景模型调用 0</strong>）',
-    ],
-    github: 'https://github.com/Dongnb66/a3-learning-agent',
-    demo: '看 README，竞赛完整文档可现场演示',
-    cover: 'a3',
-  },
 ];
 
 // 技能地图：按"做了哪些事"分类，每个领域都有真实项目背书
@@ -164,7 +146,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', '端到端管线', '官方测试向量', 'ReAct 循环', '防幻觉评测集', '64 passed'],
+    list: ['pytest', '端到端管线', '官方测试向量', 'ReAct 循环', '防幻觉评测集', '83 passed'],
   },
   {
     icon: '🚀',
