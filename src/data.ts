@@ -13,7 +13,7 @@ export const profile = {
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
     '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 4 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub。',
-    '测试基线：<strong>4 个仓库共 274 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>6 条防幻觉评测用例</strong>，全部挂入 GitHub Actions CI。',
+    '测试基线：<strong>4 个仓库共 292 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>6 条防幻觉评测用例</strong>，全部挂入 GitHub Actions CI。',
     'AI Coding 工作流：以 <strong>Claude Code、Codex、WorkBuddy</strong> 等 AI 智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
@@ -22,7 +22,7 @@ export const profile = {
 export const stats = [
   { num: '4', label: 'GitHub Projects', sub: '全 MIT 开源' },
   { num: '10+', label: 'Agents 设计', sub: 'profile/planner/quiz/...' },
-  { num: '274', label: 'Tests', sub: '4 仓库 · 零 Key 可跑 · CI 全绿' },
+  { num: '292', label: 'Tests', sub: '4 仓库 · 零 Key 可跑 · CI 全绿' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
@@ -57,7 +57,7 @@ export const projects = [
     sub: 'MULTI-AGENT · PIPELINE · SPA',
     memory: '多智能体工程化 · 流水线',
     desc: '校园互助平台：多智能体流水线处理求助 / 资源 / 失物招领，配合作风评分机制。<strong>最大亮点是多智能体的"工程化"落地</strong>——智能路由、评分反馈、抗滥用，不是 demo 而是能跑。',
-    tags: ['Node.js', 'Express', 'node:sqlite', '多智能体', 'SMTP', 'TC3 签名', 'React 18'],
+    tags: ['Node.js', 'Express', 'node:sqlite', 'MySQL', 'Redis', '多智能体', 'SMTP', 'TC3 签名', 'React 18'],
     badges: ['多智能体工程化'],
     highlights: [
       '5 智能体流水线：路由 Router / 发帖引导 PostGuide / 内容审核 Audit / 检索 Search / 撮合 Match',
