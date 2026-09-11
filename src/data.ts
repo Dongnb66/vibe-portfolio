@@ -44,7 +44,7 @@ export const projects = [
       '<strong>React 用户端 9 页面</strong> + /api 兼容层 19 端点，Gradio / Swagger / React 三种演示入口',
       '<strong>防幻觉三道代码级约束</strong>：相关性阈值检索 / 检索为空直接拒答且不调模型 / URL 白名单剔除库外链接',
       '<strong>防幻觉评测集</strong>：零配置可跑（6 用例 / 4 类断言 / JSON 报告），已挂 CI，实测编造链接 0 条',
-      '完整 Dockerfile + docker-compose + pytest 83 passed + .env.example',
+      '完整 Dockerfile + docker-compose + pytest 88 passed + .env.example',
     ],
     github: 'https://github.com/Dongnb66/python-learning-agent',
     demo: 'README + Dockerfile + docker-compose，clone 即跑',
@@ -146,7 +146,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', '端到端管线', '官方测试向量', 'ReAct 循环', '防幻觉评测集', '83 passed'],
+    list: ['pytest', '端到端管线', '官方测试向量', 'ReAct 循环', '防幻觉评测集', '88 passed'],
   },
   {
     icon: '🚀',
