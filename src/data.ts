@@ -14,7 +14,7 @@ export const profile = {
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
     '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 4 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub。',
     '测试基线：<strong>4 个仓库共 268 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>6 条防幻觉评测用例</strong>，全部挂入 GitHub Actions CI。',
-    'AI Coding 工作流：以 <strong>WorkBuddy</strong> 等智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。',
+    'AI Coding 工作流：以 <strong>Claude Code、Codex、WorkBuddy</strong> 等 AI 智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
 };
