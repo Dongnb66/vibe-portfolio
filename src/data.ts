@@ -13,7 +13,7 @@ export const profile = {
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
     '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 4 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub（早期软件杯 A3 参赛原型已重写演进并入主项目）。',
-    '测试基线：<strong>4 个仓库共 292 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
+    '测试基线：<strong>4 个仓库共 344 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
     'AI Coding 工作流：以 <strong>Claude Code、Codex、WorkBuddy</strong> 等 AI 智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
@@ -22,7 +22,7 @@ export const profile = {
 export const stats = [
   { num: '4', label: 'GitHub Projects', sub: '全 MIT 开源' },
   { num: '10+', label: 'Agents 设计', sub: 'profile/planner/quiz/...' },
-  { num: '292', label: 'Tests', sub: '4 仓库 · 零 Key 可跑 · CI 全绿' },
+  { num: '344', label: 'Tests', sub: '4 仓库 · 零 Key 可跑 · CI 全绿' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
@@ -41,10 +41,10 @@ export const projects = [
       '三层记忆：短期上下文 AgentState / 长期画像 profiles 表 / 学情轨迹 learning_sessions 表',
       '自实现腾讯云短信 TC3-HMAC-SHA256 签名，<strong>零 SDK 依赖</strong>',
       'ReAct 自主辅导 Agent：模型自主决定调哪个工具、调几轮、何时停，逐轮留可审计 trace',
-      '<strong>React 用户端 9 页面</strong> + /api 兼容层 19 端点，Gradio / Swagger / React 三种演示入口',
+      '<strong>React 用户端 9 页面</strong> + /api 兼容层 21 端点，Gradio / Swagger / React 三种演示入口',
       '<strong>防幻觉三道代码级约束</strong>：相关性阈值检索 / 检索为空直接拒答且不调模型 / URL 白名单剔除库外链接',
       '<strong>防幻觉评测集</strong>：零配置可跑（9 用例 = 6 常规 + 3 对抗 / 4 类断言 / JSON 报告），常规集挂 CI，实测编造链接 0 条',
-      '完整 Dockerfile + docker-compose + pytest 94 passed + .env.example',
+      '完整 Dockerfile + docker-compose + pytest 146 passed + .env.example',
     ],
     github: 'https://github.com/Dongnb66/python-learning-agent',
     demo: 'README + Dockerfile + docker-compose，clone 即跑',
@@ -146,7 +146,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', '端到端管线', '官方测试向量', 'ReAct 循环', '防幻觉评测集', '94 passed'],
+    list: ['pytest', '端到端管线', '官方测试向量', 'ReAct 循环', '防幻觉评测集', '146 passed'],
   },
   {
     icon: '🚀',
