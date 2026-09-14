@@ -2,7 +2,7 @@
 
 > 个人在线作品集主页 —— AI Agent 后端方向 · 多智能体 / RAG / LLM 应用工程
 
-一个 **Vibe Coding** 风格的个人作品集单页应用：橙红渐变暗色主题、动态桌宠、4 个 GitHub 开源项目的真实运行截图与差异化记忆点展示。
+一个 **Vibe Coding** 风格的个人作品集单页应用：橙红渐变暗色主题、动态桌宠，呈现 5 个开源项目（6 个仓库）的差异化封面与记忆点展示。
 
 由 React 18 + Vite 5 + TypeScript 构建，纯 CSS 实现全部动效，无 UI 组件库依赖。
 
@@ -10,7 +10,7 @@
 
 - **橙红渐变 Vibe 视觉**：暗色底 + 高饱和橙红主色渐变，突出年轻、有活力的工程师气质
 - **动态桌宠「小猪」**：Hero 区纯 SVG 动画桌宠（呼吸 / 摇尾 / 眨眼 / 打瞌睡），呼应 travel 项目里「猪猪旅行助手」的品牌形象
-- **4 个项目差异化呈现**：每个项目配一张**真实运行截图** + 一个「最强记忆点」，避免同质化
+- **5 个项目差异化呈现**：3 张**真实运行截图**（python / campus / travel）+ 2 张**定制品牌 SVG 封面**（mcp-toolkit / offer-pipeline），每个项目再配一个「最强记忆点」，避免同质化
 - **技能地图**：按「真实做过的领域」分类，每个技能都有具体项目背书
 - **交互细节**：导航栏滚过 Hero 后磨砂玻璃固定悬浮、按钮 hover 变色、卡片悬停动效
 
@@ -45,7 +45,7 @@ vibe-portfolio/
 │   │   ├── PetPig.tsx       # 动态桌宠小猪（SVG 动画）
 │   │   ├── RobotHead.tsx    # 装饰机器人
 │   │   └── ProjectCover.tsx # 项目截图封面
-│   └── assets/screenshots/  # 4 个项目的真实运行截图
+│   └── assets/screenshots/  # 真实运行截图（python / campus / travel / a3）
 ├── public/screenshots/      # travel 项目 4 张 Hero 区真图
 └── serve.mjs                # 零依赖静态服务器（部署用）
 ```
