@@ -194,8 +194,8 @@ Done. push 36 files / +3110 lines.`}
             <span className="lbl">GitHub Projects</span>
           </div>
           <div className="hero-meta-stat">
-            <span className="num">10+</span>
-            <span className="lbl">Multi-Agents</span>
+            <span className="num">8</span>
+            <span className="lbl">State Graph Nodes</span>
           </div>
           <div className="hero-meta-stat">
             <span className="num">508</span>
