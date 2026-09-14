@@ -188,7 +188,7 @@ const PipelineCover: React.FC = () => {
         OFFER PIPELINE
       </text>
       <text x="640" y="566" fill="#ff8c5a" fontSize="20" fontFamily="monospace" textAnchor="middle" letterSpacing="6">
-        我是作者，也是日活用户
+        我是作者，也是唯一用户
       </text>
 
       {/* 能力 chips */}

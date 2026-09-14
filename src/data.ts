@@ -112,10 +112,10 @@ export const projects = [
     id: 'offer-pipeline',
     name: '求职流水线助手（offer-pipeline + agent-platform-java）',
     sub: 'SINGLE-FILE SPA + SPRING BOOT 3 BACKEND · 164 TESTS',
-    memory: '唯一有真实日活用户的工具 · 单文件前端 + 自研 Java 后端',
-    desc: '从「我是谁」到「面试进场」的本地求职流水线：画像 → 能力推断 → 方向推荐 → JD 分析 → 打招呼初稿 → 投递台账 → 求职分线 → 面试备战 → 简历直填包，一个闭环。<strong>前端是纯 HTML/CSS/JS 单文件</strong>（无框架无构建），<strong>后端是自研的 Spring Boot 3 服务</strong>——两个仓库一个项目，<strong>我是作者，也是日活用户</strong>。',
+    memory: '给自己写、每天在用的工具 · 单文件前端 + 自研 Java 后端',
+    desc: '从「我是谁」到「面试进场」的本地求职流水线：画像 → 能力推断 → 方向推荐 → JD 分析 → 打招呼初稿 → 投递台账 → 求职分线 → 面试备战 → 简历直填包，一个闭环。<strong>前端是纯 HTML/CSS/JS 单文件</strong>（无框架无构建），<strong>后端是自研的 Spring Boot 3 服务</strong>——两个仓库一个项目，<strong>我是作者，也是唯一用户</strong>。',
     tags: ['HTML/CSS/JS 单文件', 'Node.js', 'Java 21', 'Spring Boot 3', 'JPA(H2/MySQL)', 'RAG(BM25+语义)', 'JUnit + node --test', 'MIT'],
-    badges: ['真实日活用户', '单文件前端 + 自研 Java 后端', '164 条测试'],
+    badges: ['作者本人每天在用', '单文件前端 + 自研 Java 后端', '164 条测试'],
     highlights: [
       '<strong>前端单文件、零依赖、零构建</strong>：双击 index.html 离线可用；另配零依赖 Node 本地服务（面经抓取 / AI 润色），只监听 127.0.0.1',
       '<strong>单文件也能被完整断言</strong>：<code>test-support/harness.mjs</code> 把 index.html 里的 script 抽出来注入桩 DOM/localStorage 在沙箱求值——129 条 node --test 挂 CI，且不破坏"单文件"的部署方式',
