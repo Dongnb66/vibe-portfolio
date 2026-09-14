@@ -174,7 +174,7 @@ Done. push 36 files / +3110 lines.`}
         <p className="hero-sub">
           {profile.name} · {profile.school} {profile.major} {profile.grade}<br />
           专注于 {profile.goal}。<br />
-          已独立完成 <strong>4 个开源项目</strong>，LangGraph / FastAPI / Express / RAG / DeepSeek 全栈落地。
+          已独立完成 <strong>5 个开源项目（6 个仓库）</strong>，LangGraph / FastAPI / Spring Boot / Express / RAG / DeepSeek 全栈落地。
         </p>
 
         <div className="hero-cta">
@@ -190,15 +190,15 @@ Done. push 36 files / +3110 lines.`}
       <div className="hero-meta">
         <div className="hero-meta-left">
           <div className="hero-meta-stat">
-            <span className="num">5+</span>
+            <span className="num">5</span>
             <span className="lbl">GitHub Projects</span>
           </div>
           <div className="hero-meta-stat">
-            <span className="num">15+</span>
+            <span className="num">10+</span>
             <span className="lbl">Multi-Agents</span>
           </div>
           <div className="hero-meta-stat">
-            <span className="num">60+</span>
+            <span className="num">508</span>
             <span className="lbl">Test Cases</span>
           </div>
           <a className="hero-meta-mail" href={`mailto:${profile.email}`}>
@@ -248,7 +248,7 @@ function About() {
           ))}
           <p>
             日常实习可立即到岗，同时重点准备 2027 年 3–5 月的暑期实习招聘窗口。
-            已独立交付 <strong>4 个 MIT 开源项目</strong>，熟悉 LangGraph / FastAPI / Express / RAG / DeepSeek 全栈，
+            已独立交付 <strong>5 个 MIT 开源项目（6 个仓库）</strong>，熟悉 LangGraph / FastAPI / Spring Boot / Express / RAG / DeepSeek 全栈，
             能从 0 到 1 完成后端工程化交付。
           </p>
         </div>
@@ -272,11 +272,11 @@ function Projects() {
     <section id="projects" className="section">
       <div className="section-eyebrow">02 · WORKS</div>
       <h2 className="section-title reveal">
-        4 个 <span className="grad">开源项目</span>，<br />
+        5 个 <span className="grad">开源项目</span>，<br />
         全 MIT License
       </h2>
       <p className="section-desc reveal">
-        简历里写的"4 个开源项目，全 MIT License，面试可直接 clone 现场跑通"——
+        简历里写的"5 个开源项目（6 个仓库），全 MIT License，面试可直接 clone 现场跑通"——
         这是每一个项目的真实状态，不是话术。
       </p>
 
@@ -288,7 +288,7 @@ function Projects() {
             style={{ transitionDelay: `${i * 0.08}s` }}
           >
             <div className="project-visual">
-              <ProjectCover kind={p.cover as 'python' | 'campus' | 'travel' | 'mcp' | 'a3'} />
+              <ProjectCover kind={p.cover as 'python' | 'campus' | 'travel' | 'mcp' | 'a3' | 'pipeline' | 'java'} />
               {p.id === 'travel-rank' && (
                 <div className="project-pig">
                   <PetPig size={140} />
@@ -350,7 +350,7 @@ function Skills() {
         技能 <span className="grad">地图</span>
       </h2>
       <p className="section-desc reveal">
-        不是堆砌技术名词，而是按"做了哪些事"分类 —— 10 个领域，每个都有真实项目背书。
+        不是堆砌技术名词，而是按"做了哪些事"分类 —— 11 个领域，每个都有真实项目背书。
       </p>
 
       <div className="skills-grid reveal-stagger">
