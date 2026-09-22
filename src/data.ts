@@ -20,7 +20,7 @@ export const profile = {
 };
 
 export const stats = [
-  { num: '5', label: 'GitHub Projects', sub: '6 个仓库 · 全 MIT 开源' },
+  { num: '5', label: 'GitHub Projects', sub: '6 个仓库 · 2026.09 开源 · 全 MIT' },
   { num: '8', label: 'Node 状态图', sub: '5 LLM 智能体 + 2 记忆 + 1 ReAct' },
   { num: '508', label: 'Tests', sub: '6 仓库 · 零 Key 可跑 · CI 持续通过' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
@@ -173,7 +173,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '508 条测试'],
+    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '508 条测试与断言'],
   },
   {
     icon: '🚀',
