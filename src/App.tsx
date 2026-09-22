@@ -198,8 +198,8 @@ Done. push 36 files / +3110 lines.`}
             <span className="lbl">State Graph Nodes</span>
           </div>
           <div className="hero-meta-stat">
-            <span className="num">508</span>
-            <span className="lbl">Test Cases</span>
+            <span className="num">515</span>
+            <span className="lbl">Tests + asserts</span>
           </div>
           <a className="hero-meta-mail" href={`mailto:${profile.email}`}>
             {profile.email}
