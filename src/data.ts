@@ -22,7 +22,7 @@ export const profile = {
 export const stats = [
   { num: '5', label: 'GitHub Projects', sub: '6 个仓库 · 全 MIT 开源' },
   { num: '8', label: 'Node 状态图', sub: '5 LLM 智能体 + 2 记忆 + 1 ReAct' },
-  { num: '508', label: 'Tests', sub: '6 仓库 · 零 Key 可跑 · CI 全绿' },
+  { num: '508', label: 'Tests', sub: '6 仓库 · 零 Key 可跑 · CI 持续通过' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
