@@ -189,18 +189,17 @@ Done. push 36 files / +3110 lines.`}
 
       <div className="hero-meta">
         <div className="hero-meta-left">
-          <div className="hero-meta-stat">
-            <span className="num">5</span>
-            <span className="lbl">GitHub Projects</span>
-          </div>
-          <div className="hero-meta-stat">
-            <span className="num">8</span>
-            <span className="lbl">State Graph Nodes</span>
-          </div>
-          <div className="hero-meta-stat">
-            <span className="num">515</span>
-            <span className="lbl">Tests + asserts</span>
-          </div>
+          {([
+            ['GitHub Projects', 'GitHub Projects'],
+            ['Node 状态图', 'State Graph Nodes'],
+            ['Tests', 'Tests + asserts'],
+          ] as const).map(([statLabel, lbl]) => (
+            <div className="hero-meta-stat" key={lbl}>
+              {/* 数字一律取自 data.ts 的 stats，避免这里再存一份会漂移的副本 */}
+              <span className="num">{stats.find((s) => s.label === statLabel)?.num}</span>
+              <span className="lbl">{lbl}</span>
+            </div>
+          ))}
           <a className="hero-meta-mail" href={`mailto:${profile.email}`}>
             {profile.email}
           </a>
