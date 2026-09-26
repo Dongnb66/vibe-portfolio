@@ -44,7 +44,7 @@ export const projects = [
       '<strong>React 用户端 9 页面</strong> + /api 兼容层 21 端点，Gradio / Swagger / React 三种演示入口',
       '<strong>防幻觉三道代码级约束</strong>：检索零分即空（无命中不硬凑）/ 检索为空直接拒答且不调模型 / URL 白名单剔除库外链接',
       '<strong>防幻觉评测集</strong>：零配置可跑（9 用例 = 6 常规 + 3 对抗 / 4 类断言 / JSON 报告），常规集挂 CI，实测编造链接 0 条',
-      '<strong>检索层离线基准</strong>：60 条标注查询 + 固定种子随机基线，实测默认路径 Hit@1 22.2%、误拒 25/36 = 69.4%；用<strong>同分冲突</strong>证明<strong>任何只依赖词法分数的判据，对这一对输入必然错一个</strong>（IDF 覆盖率、稀有词计数实测同样分不开）→ 修复分两层：<strong>CJK bigram 分词为主因</strong>（同分母 Hit@1 22.2% → 77.8%、误拒 25 条 → 1 条）+ <strong>Embedding 双路 + RRF + 两路名次一致性放行</strong>补剩余漏网（双路可测量增量 = 语料外拒答 22/22 → 21/22），未配 Key 自动降级、失败不重试',
+      '<strong>检索层离线基准</strong>：在 <strong>12 篇小语料</strong>上自建 60 条标注查询 + 固定种子随机基线（<strong>绝对值不可外推</strong>），实测默认路径 Hit@1 22.2%、误拒 25/36 = 69.4%；用<strong>同分冲突</strong>证明<strong>任何只依赖词法分数的判据，对这一对输入必然错一个</strong>（IDF 覆盖率、稀有词计数实测同样分不开）→ 修复分两层：<strong>CJK bigram 分词为主因</strong>（同分母 Hit@1 22.2% → 77.8%、误拒 25 条 → 1 条）+ <strong>Embedding 双路 + RRF + 两路名次一致性放行</strong>补剩余漏网；<strong>代价在拒答侧：语料外 22/22 → 21/22、争议组 2/2 → 0/2</strong>。未配 Key 自动降级、失败不重试',
       '<strong>技术文章（掘金首发）</strong>：把上面这次检索基准的失败与修复写成完整复盘——含阈值敏感性、检索延迟、每条漏网查询漏在哪一层 → <a href="https://juejin.cn/post/7689091429971902499" target="_blank" rel="noopener noreferrer">juejin.cn/post/7689091429971902499</a>',
       '完整 Dockerfile + docker-compose + pytest 156 passed + .env.example',
     ],
