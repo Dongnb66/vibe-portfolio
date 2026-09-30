@@ -12,6 +12,7 @@ const FALLBACK_COLORS: Record<string, [string, string]> = {
   a3: ['#1a0d08', '#ff4d2e'],
   pipeline: ['#1a0d08', '#ff6b3d'],
   java: ['#08131f', '#4da3ff'],
+  workbench: ['#07131f', '#38bdf8'],
 };
 
 // Vite build 时直接 import 静态资源，打包进 dist/assets
@@ -27,7 +28,7 @@ const SHOTS: Record<string, string> = {
   a3: a3Shot,
 };
 
-type CoverKind = 'python' | 'campus' | 'travel' | 'mcp' | 'a3' | 'pipeline' | 'java';
+type CoverKind = 'python' | 'campus' | 'travel' | 'mcp' | 'a3' | 'pipeline' | 'java' | 'workbench';
 
 export const ProjectCover: React.FC<{ kind: CoverKind }> = ({ kind }) => {
   const shotUrl = SHOTS[kind];
@@ -292,11 +293,103 @@ const JavaCover: React.FC = () => {
   );
 };
 
+// internship-workbench 品牌封面：四端 → 数据库 RLS 的"隔离"视觉
+const WorkbenchCover: React.FC = () => {
+  const [w, h] = [1280, 720];
+  const clients = ['Web · React 19', '微信小程序', 'Chrome 扩展', '本地抓取器'];
+  const rows = [
+    '10 张私有表 · USING + WITH CHECK 双写',
+    'owner_id DEFAULT auth.uid() · 归属由库生成',
+    '公共岗位库只读例外 · 无任何写策略',
+  ];
+  const chips = ['10 表 RLS 双写', '779 项测试', '契约测试跨端', '扩展 0 网络请求'];
+  return (
+    <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMid slice" style={{ width: '100%', height: '100%' }}>
+      <defs>
+        <linearGradient id="bg-wb" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#07131f" />
+          <stop offset="1" stopColor="#040a11" />
+        </linearGradient>
+        <linearGradient id="wb-word" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#bae6fd" />
+          <stop offset="1" stopColor="#38bdf8" />
+        </linearGradient>
+        <radialGradient id="glow-wb" cx="50%" cy="46%">
+          <stop offset="0" stopColor="#38bdf8" stopOpacity="0.30" />
+          <stop offset="1" stopColor="#38bdf8" stopOpacity="0" />
+        </radialGradient>
+        <pattern id="grid-wb" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56,189,248,0.13)" strokeWidth="1" />
+        </pattern>
+      </defs>
+      <rect width={w} height={h} fill="url(#bg-wb)" />
+      <rect width={w} height={h} fill="url(#grid-wb)" />
+      <circle cx={w * 0.5} cy={h * 0.46} r="380" fill="url(#glow-wb)" />
+
+      <text x="60" y="78" fill="#7dd3fc" fontSize="20" fontFamily="monospace" letterSpacing="4">
+        internship-workbench · React 19 + 云后端
+      </text>
+
+      {/* 四端 */}
+      {clients.map((t, i) => {
+        const cw = 268, gapX = 22;
+        const totalW = clients.length * cw + (clients.length - 1) * gapX;
+        const x = 640 - totalW / 2 + i * (cw + gapX);
+        return (
+          <g key={t}>
+            <rect x={x} y={128} width={cw} height={64} rx="12" fill="rgba(56,189,248,0.10)" stroke="rgba(125,211,252,0.55)" strokeWidth="1.4" />
+            <text x={x + cw / 2} y={168} fill="#e0f2fe" fontSize="20" textAnchor="middle" fontFamily="Arial, sans-serif">{t}</text>
+          </g>
+        );
+      })}
+
+      {/* 汇聚线 */}
+      <g stroke="#38bdf8" strokeWidth="1.6" fill="none" opacity="0.65">
+        {clients.map((_, i) => {
+          const cw = 268, gapX = 22;
+          const totalW = clients.length * cw + (clients.length - 1) * gapX;
+          const x = 640 - totalW / 2 + i * (cw + gapX) + cw / 2;
+          return <line key={`l${i}`} x1={x} y1={196} x2={640} y2={244} />;
+        })}
+      </g>
+
+      {/* 数据库 + RLS */}
+      <rect x="250" y="250" width="780" height="152" rx="16" fill="rgba(56,189,248,0.07)" stroke="#38bdf8" strokeWidth="1.6" />
+      <text x="278" y="286" fill="#bae6fd" fontSize="21" fontWeight="700" fontFamily="monospace">PostgreSQL · RLS 隔离</text>
+      {rows.map((t, i) => (
+        <text key={t} x="278" y={318 + i * 27} fill="#7dd3fc" fontSize="16" fontFamily="monospace">{t}</text>
+      ))}
+
+      {/* 中央大字 */}
+      <text x="640" y="546" fill="url(#wb-word)" fontSize="86" fontWeight="800" textAnchor="middle" fontFamily="Arial, sans-serif" letterSpacing="3">
+        MULTI-TENANT
+      </text>
+      <text x="640" y="582" fill="#7dd3fc" fontSize="20" fontFamily="monospace" textAnchor="middle" letterSpacing="5">
+        隔离靠数据库，不靠自觉
+      </text>
+
+      {/* chips */}
+      {chips.map((t, i) => {
+        const cw = 250, gapX = 22;
+        const totalW = chips.length * cw + (chips.length - 1) * gapX;
+        const x = 640 - totalW / 2 + i * (cw + gapX);
+        return (
+          <g key={t}>
+            <rect x={x} y={618} width={cw} height={48} rx="10" fill="rgba(56,189,248,0.12)" stroke="rgba(125,211,252,0.45)" strokeWidth="1" />
+            <text x={x + cw / 2} y={648} fill="#bae6fd" fontSize="17" fontFamily="monospace" textAnchor="middle">{t}</text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+};
+
 // 简易 SVG 占位封面（兜底用）
 const FallbackCover: React.FC<{ kind: CoverKind }> = ({ kind }) => {
   if (kind === 'mcp') return <McpCover />;
   if (kind === 'pipeline') return <PipelineCover />;
   if (kind === 'java') return <JavaCover />;
+  if (kind === 'workbench') return <WorkbenchCover />;
   const [w, h] = [1280, 720];
   const [c1, c2] = FALLBACK_COLORS[kind];
 

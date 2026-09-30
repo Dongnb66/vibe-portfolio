@@ -174,7 +174,7 @@ Done. push 36 files / +3110 lines.`}
         <p className="hero-sub">
           {profile.name} · {profile.school} {profile.major} {profile.grade}<br />
           专注于 {profile.goal}。<br />
-          已独立完成 <strong>5 个开源项目（6 个仓库）</strong>，LangGraph / FastAPI / Spring Boot / Express / RAG / DeepSeek 全栈落地。
+          已独立完成 <strong>5 个开源项目</strong>，LangGraph / FastAPI / Spring Boot / Express / RAG / DeepSeek 全栈落地。
         </p>
 
         <div className="hero-cta">
@@ -237,7 +237,7 @@ function About() {
       </h2>
       <p className="section-desc reveal">
         不是只跑通 demo，而是把每个项目当作作品集交付 ——
-        README 中英双语、Dockerfile 一键启动、156 个 pytest 全 mock 通过、防幻觉评测集挂进 CI、签名对照官方测试向量。
+        README 中英双语、Dockerfile 一键启动、158 个 pytest 全 mock 通过、防幻觉评测集挂进 CI、签名对照官方测试向量。
       </p>
 
       <div className="about">
@@ -247,7 +247,7 @@ function About() {
           ))}
           <p>
             日常实习可立即到岗，同时重点准备 2027 年 3–5 月的暑期实习招聘窗口。
-            已独立交付 <strong>5 个 MIT 开源项目（6 个仓库）</strong>，熟悉 LangGraph / FastAPI / Spring Boot / Express / RAG / DeepSeek 全栈，
+            已独立交付 <strong>5 个 MIT 开源项目</strong>，熟悉 LangGraph / FastAPI / Spring Boot / Express / RAG / DeepSeek 全栈，
             能从 0 到 1 完成后端工程化交付。
           </p>
         </div>
@@ -275,7 +275,7 @@ function Projects() {
         全 MIT License
       </h2>
       <p className="section-desc reveal">
-        简历里写的"5 个开源项目（6 个仓库），全 MIT License，面试可直接 clone 现场跑通"——
+        简历里写的"5 个开源项目全部 MIT、clone 即可跑测试"——
         这是每一个项目的真实状态，不是话术。
       </p>
 

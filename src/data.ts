@@ -1,4 +1,5 @@
-// 简历 / 作品集数据 — 来源：杨运栋 简历 v19 + 5 个 GitHub 开源项目（共 6 个仓库）（A3 = 方案 A 定调：不主动展开，卡片带演进叙事）
+// 简历 / 作品集数据 — 来源：杨运栋 简历（2028 届 · AI 应用开发实习）+ 5 个 GitHub 开源项目
+// 口径与简历逐项对齐：5 个项目 = 158 + 779 + 92 + 79 + 48 = 1156 条测试
 // 5 个项目各设一个"最强记忆点"，避免同质化
 
 export const profile = {
@@ -12,17 +13,17 @@ export const profile = {
   goal: 'AI Agent 后端开发工程师 · 多智能体 / RAG / LLM 应用工程',
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
-    '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目（共 6 个仓库），全部 <span class="tag">MIT License</span> 开源在 GitHub（早期软件杯 A3 参赛原型已重写演进并入主项目）。',
-    '测试基线：<strong>6 个仓库共 518 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
+    '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub（早期软件杯 A3 参赛原型已重写演进并入主项目）。',
+    '测试基线：<strong>5 个项目共 1156 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
     'AI Coding 工作流：以 <strong>Claude Code、Codex、WorkBuddy</strong> 等 AI 智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。其中一次真实实验（检索层误拒率 69.4% 的失败证明与修复）已写成公开技术文章发布在掘金。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
 };
 
 export const stats = [
-  { num: '5', label: 'GitHub Projects', sub: '6 个仓库 · 2026.09 开源 · 全 MIT' },
+  { num: '5', label: 'GitHub Projects', sub: '2026.09 开源 · 全 MIT' },
   { num: '8', label: 'Node 状态图', sub: '5 LLM 智能体 + 2 记忆 + 1 ReAct' },
-  { num: '518', label: 'Tests', sub: '6 仓库 · 零 Key 可跑 · CI 持续通过' },
+  { num: '1156', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
@@ -44,9 +45,9 @@ export const projects = [
       '<strong>React 用户端 9 页面</strong> + /api 兼容层 21 端点，Gradio / Swagger / React 三种演示入口',
       '<strong>防幻觉三道代码级约束</strong>：检索零分即空（无命中不硬凑）/ 检索为空直接拒答且不调模型 / URL 白名单剔除库外链接',
       '<strong>防幻觉评测集</strong>：零配置可跑（9 用例 = 6 常规 + 3 对抗 / 4 类断言 / JSON 报告），常规集挂 CI，实测编造链接 0 条',
-      '<strong>检索层离线基准</strong>：在 <strong>12 篇小语料</strong>上自建 60 条标注查询 + 固定种子随机基线（<strong>绝对值不可外推</strong>），实测默认路径 Hit@1 22.2%、误拒 25/36 = 69.4%；用<strong>同分冲突</strong>证明<strong>任何只依赖词法分数的判据，对这一对输入必然错一个</strong>（IDF 覆盖率、稀有词计数实测同样分不开）→ 修复分两层：<strong>CJK bigram 分词为主因</strong>（同分母 Hit@1 22.2% → 77.8%、误拒 25 条 → 1 条）+ <strong>Embedding 双路 + RRF + 两路名次一致性放行</strong>补剩余漏网；<strong>代价在拒答侧：语料外 22/22 → 21/22、争议组 2/2 → 0/2</strong>。未配 Key 自动降级、失败不重试',
+      '<strong>检索层离线基准</strong>：在 <strong>12 篇小语料</strong>上自建 60 条标注查询 + 固定种子随机基线（<strong>绝对值不可外推</strong>），实测默认路径 Hit@1 22.2%、误拒 25/36 = 69.4%；用<strong>同分冲突</strong>证明<strong>任何只依赖词法分数的判据，对这一对输入必然错一个</strong>（IDF 覆盖率、稀有词计数实测同样分不开）→ 修复分两层：<strong>CJK bigram 分词从「只在混合路生效」改到默认词法路</strong>（同分母 Hit@1 22.2% → 77.8%、误拒 25 条 → 2 条）+ <strong>相关性阈值 2.0</strong>（零召回代价把语料外误放行压到 1/22）；<strong>Embedding 双路 + RRF + 两路名次一致性放行</strong>作为可选增强；<strong>代价在拒答侧：语料外 22/22 → 21/22、争议组 2/2 → 0/2</strong>。未配 Key 自动降级、失败不重试',
       '<strong>技术文章（掘金首发）</strong>：把上面这次检索基准的失败与修复写成完整复盘——含阈值敏感性、检索延迟、每条漏网查询漏在哪一层 → <a href="https://juejin.cn/post/7689091429971902499" target="_blank" rel="noopener noreferrer">juejin.cn/post/7689091429971902499</a>',
-      '完整 Dockerfile + docker-compose + pytest 156 passed + .env.example',
+      '完整 Dockerfile + docker-compose + pytest 158 passed + .env.example',
     ],
     github: 'https://github.com/Dongnb66/python-learning-agent',
     demo: 'README + Dockerfile + docker-compose，clone 即跑',
@@ -65,7 +66,7 @@ export const projects = [
       '5 智能体流水线：路由 Router / 发帖引导 PostGuide / 内容审核 Audit / 检索 Search / 撮合 Match',
       '完整账号体系：手机/邮箱/微信/QQ，<strong>首次扫码强校验</strong>',
       '<strong>React 18 + Vite 5 前端</strong>，JWT 双令牌 + RBAC、事务防并发、自实现 TTL+LRU 缓存',
-      '服务端共 <strong>71 项测试</strong>（48 行为断言 + 10 冒烟 + 13 缓存）：行为测试用 fetch 桩把模型换成可控脚本，断言"无 Key 时 0 次请求""模型 500 时违规拦截依然生效"',
+      '服务端共 <strong>92 项测试</strong>（48 行为断言 + 21 编排断言 + 10 冒烟 + 13 缓存）：行为测试用 fetch 桩把模型换成可控脚本，断言"无 Key 时 0 次请求""模型 500 时违规拦截依然生效"',
       '<strong>测试查出 2 个真 bug 并修复</strong>：seed 脚本的 process.exit 会杀掉启动中的服务、.env 里的 Key 永远读不到（ESM import 提升导致）',
       'Node 单一 runtime，部署 / 学习 / 二次开发都简单',
     ],
@@ -110,26 +111,25 @@ export const projects = [
     demo: '本作品集 Hero 区有 4 张真实运行截图',
     cover: 'travel',
   },
-    {
-    id: 'offer-pipeline',
-    name: '求职流水线助手（offer-pipeline + agent-platform-java）',
-    sub: 'SINGLE-FILE SPA + SPRING BOOT 3 BACKEND · 164 TESTS',
-    memory: '给自己写、每天在用的工具 · 单文件前端 + 自研 Java 后端',
-    desc: '从「我是谁」到「面试进场」的本地求职流水线：画像 → 能力推断 → 方向推荐 → JD 分析 → 打招呼初稿 → 投递台账 → 求职分线 → 面试备战 → 简历直填包，一个闭环。<strong>前端是纯 HTML/CSS/JS 单文件</strong>（无框架无构建），<strong>后端是自研的 Spring Boot 3 服务</strong>——两个仓库一个项目，<strong>我是作者，也是唯一用户</strong>。',
-    tags: ['HTML/CSS/JS 单文件', 'Node.js', 'Java 21', 'Spring Boot 3', 'JPA(H2/MySQL)', 'RAG(BM25+语义)', 'JUnit + node --test', 'MIT'],
-    badges: ['作者本人每天在用', '单文件前端 + 自研 Java 后端', '164 条测试'],
+  {
+    id: 'internship-workbench',
+    name: 'internship-workbench',
+    sub: 'MULTI-TENANT · RLS · 4 CLIENTS',
+    memory: '多租户隔离靠数据库不靠自觉 · 四端共用一套口径',
+    desc: '求职全流程平台：岗位广场 → 投递台账 → 面试备战，Web / 微信小程序 / Chrome 扩展 / 本地抓取器四端共用一套数据与口径。<strong>最大亮点是把多租户隔离下沉到数据库</strong>——RLS 行级策略强制归属，不依赖应用层自觉；这套隔离本身也被写成了断言。',
+    tags: ['React 19', 'TypeScript', 'PostgreSQL', 'RLS', 'Chrome MV3', '微信小程序', 'Playwright', '契约测试', 'Docker'],
+    badges: ['多租户架构', '四端复用', '779 项测试'],
     highlights: [
-      '<strong>前端单文件、零依赖、零构建</strong>：双击 index.html 离线可用；另配零依赖 Node 本地服务（面经抓取 / AI 润色），只监听 127.0.0.1',
-      '<strong>单文件也能被完整断言</strong>：<code>test-support/harness.mjs</code> 把 index.html 里的 script 抽出来注入桩 DOM/localStorage 在沙箱求值——129 条 node --test 挂 CI，且不破坏"单文件"的部署方式',
-      '<strong>产品红线本身就是测试用例</strong>：不收账号密码 / 不自动代投 / 能力缺口不代填——三条红线各有断言守着（学校名默认不泄漏、缺口不进招呼语、填充脚本绝不点击提交）',
-      '<strong>后端 core 层零 Spring 依赖</strong>：LLM 抽象 / Agent 循环 / RAG / 流水线全部纯 Java，可脱离容器独立单测（借鉴 pi 的 core / 壳分层）',
-      '<strong>混合检索（多路召回）</strong>：BM25（中文 bigram）+ Embedding 余弦两路并行、<strong>RRF 融合排序（k=60）</strong>；未配 Key 自动降级纯 BM25——语义路是增强，不是依赖',
-      '<strong>Agent 工具循环 + 计划确认门</strong>：触及轮数上限做「无工具强制总结」（打 limit 事件可归因）；Plan → <strong>人工确认门</strong> → 执行 → 报告；全过程事件 Tracing 落库可回放',
-      '<strong>数据不丢</strong>：一键导出/导入 JSON 备份 + 服务端快照同步（备份 JSON 原样推拉、换设备零丢失，后端未运行自动降级）',
+      '<strong>多租户隔离靠数据库不靠自觉</strong>：10 张私有表全部 <code>USING</code> + <code>WITH CHECK</code> 双写 RLS 策略——少了 WITH CHECK，UPDATE 就能把行改成别人的 <code>owner_id</code>，等于越权后门；归属列 <code>DEFAULT auth.uid()</code> 由库生成，客户端无从指定。前端不传 owner_id、写操作空返回即抛错，<strong>三条防线全写成断言</strong>',
+      '<strong>把 PostgREST 的静默语义翻译成显式错误</strong>：RLS 拒绝写入时它返回的是空数组而不是报错，不翻译的话用户看到「保存成功」而数据根本没落库；insert / update / delete 三条写路径各自识别并抛错',
+      '<strong>一套口径四端复用</strong>：Web 与微信小程序共用同一批表与同一套 RLS 约定；Chrome 扩展（<code>activeTab</code> + 零 <code>host_permissions</code>）只读当前页 DOM，<strong>全目录 0 次网络请求、数据不出本机</strong>；本地抓取器串行 + 随机抖动（2600–3640ms）+ 页数上限，只读公开接口、命中风控即停不绕',
+      '<strong>契约测试钉住跨端一致性</strong>：Web（TS/ESM）与小程序（CommonJS）无法共享代码，改为真实加载两端后逐项比对渠道表 / 岗位类型 / 日期函数 / 去重键。这类错位的症状是「导入成功但字段全空」——<strong>不报错，所以必须断言</strong>',
+      '<strong>提取算法只写一份</strong>：扩展与抓取器共用同一份 <code>collector.js</code>；测试从源码推导扩展侧字段键，再断言抓取器是其超集且多出的字段必须有理由——防「两边一起改名一起错」',
+      '<strong>CI 把工具看不见的失败变成断言</strong>：lint / typecheck / test / build 四道门，并用<strong>两个时区各跑一遍测试</strong>（UTC+8 会把「Web↔小程序 daysLeft 差一天」抵消成假绿）',
     ],
-    github: 'https://github.com/Dongnb66/offer-pipeline',
-    demo: '双击 start.bat，或直接打开 index.html 离线用；后端 mvn spring-boot:run 看 Swagger',
-    cover: 'pipeline',
+    github: 'https://github.com/Dongnb66/internship-workbench',
+    demo: 'clone 后 npm i && npm test（离线可跑）；端到端需自配云后端',
+    cover: 'workbench',
   },
 ];
 
@@ -175,7 +175,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '518 条测试与断言'],
+    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1156 条测试与断言'],
   },
   {
     icon: '🚀',
