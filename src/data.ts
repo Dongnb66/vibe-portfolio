@@ -1,5 +1,5 @@
 // 简历 / 作品集数据 — 来源：杨运栋 简历（2028 届 · AI 应用开发实习）+ 5 个 GitHub 开源项目
-// 口径与简历逐项对齐：5 个项目 = 158 + 779 + 92 + 79 + 50 = 1158 条测试
+// 口径与简历逐项对齐：5 个项目 = 159 + 779 + 92 + 79 + 50 = 1159 条测试
 // 5 个项目各设一个"最强记忆点"，避免同质化
 
 export const profile = {
@@ -14,7 +14,7 @@ export const profile = {
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
     '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub（早期软件杯 A3 参赛原型已重写演进并入主项目）。',
-    '测试基线：<strong>5 个项目共 1158 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
+    '测试基线：<strong>5 个项目共 1159 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
     'AI Coding 工作流：以 <strong>Claude Code、Codex、WorkBuddy</strong> 等 AI 智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。其中一次真实实验（检索层误拒率 69.4% 的失败证明与修复）已写成公开技术文章发布在掘金。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
@@ -23,7 +23,7 @@ export const profile = {
 export const stats = [
   { num: '5', label: 'GitHub Projects', sub: '2026.09 开源 · 全 MIT' },
   { num: '8', label: 'Node 状态图', sub: '5 LLM 智能体 + 2 记忆 + 1 ReAct' },
-  { num: '1158', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
+  { num: '1159', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
@@ -47,7 +47,7 @@ export const projects = [
       '<strong>防幻觉评测集</strong>：零配置可跑（9 用例 = 6 常规 + 3 对抗 / 4 类断言 / JSON 报告），常规集挂 CI，实测编造链接 0 条',
       '<strong>检索层离线基准</strong>：在 <strong>12 篇小语料</strong>上自建 60 条标注查询 + 固定种子随机基线（<strong>绝对值不可外推</strong>），实测默认路径 Hit@1 22.2%、误拒 25/36 = 69.4%；用<strong>同分冲突</strong>证明<strong>任何只依赖词法分数的判据，对这一对输入必然错一个</strong>（IDF 覆盖率、稀有词计数实测同样分不开）→ 修复分两层：<strong>CJK bigram 分词从「只在混合路生效」改到默认词法路</strong>（同分母 Hit@1 22.2% → 77.8%、误拒 25 条 → 2 条）+ <strong>相关性阈值 2.0</strong>（零召回代价把语料外误放行压到 1/22）；<strong>Embedding 双路 + RRF + 两路名次一致性放行</strong>作为可选增强；<strong>代价在拒答侧：语料外 22/22 → 21/22、争议组 2/2 → 0/2</strong>。未配 Key 自动降级、失败不重试',
       '<strong>技术文章（掘金首发）</strong>：把上面这次检索基准的失败与修复写成完整复盘——含阈值敏感性、检索延迟、每条漏网查询漏在哪一层 → <a href="https://juejin.cn/post/7689091429971902499" target="_blank" rel="noopener noreferrer">juejin.cn/post/7689091429971902499</a>',
-      '完整 Dockerfile + docker-compose + pytest 158 passed + .env.example',
+      '完整 Dockerfile + docker-compose + pytest 159 passed + .env.example',
     ],
     github: 'https://github.com/Dongnb66/python-learning-agent',
     demo: 'README + Dockerfile + docker-compose，clone 即跑',
@@ -176,7 +176,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1158 条测试与断言'],
+    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1159 条测试与断言'],
   },
   {
     icon: '🚀',
