@@ -1,5 +1,5 @@
 // 简历 / 作品集数据 — 来源：杨运栋 简历（2028 届 · AI 应用开发实习）+ 5 个 GitHub 开源项目
-// 口径与简历逐项对齐：5 个项目 = 158 + 779 + 92 + 79 + 48 = 1156 条测试
+// 口径与简历逐项对齐：5 个项目 = 158 + 779 + 92 + 79 + 50 = 1158 条测试
 // 5 个项目各设一个"最强记忆点"，避免同质化
 
 export const profile = {
@@ -14,7 +14,7 @@ export const profile = {
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
     '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub（早期软件杯 A3 参赛原型已重写演进并入主项目）。',
-    '测试基线：<strong>5 个项目共 1156 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
+    '测试基线：<strong>5 个项目共 1158 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
     'AI Coding 工作流：以 <strong>Claude Code、Codex、WorkBuddy</strong> 等 AI 智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。其中一次真实实验（检索层误拒率 69.4% 的失败证明与修复）已写成公开技术文章发布在掘金。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
@@ -23,7 +23,7 @@ export const profile = {
 export const stats = [
   { num: '5', label: 'GitHub Projects', sub: '2026.09 开源 · 全 MIT' },
   { num: '8', label: 'Node 状态图', sub: '5 LLM 智能体 + 2 记忆 + 1 ReAct' },
-  { num: '1156', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
+  { num: '1158', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
@@ -78,15 +78,16 @@ export const projects = [
     id: 'mcp-toolkit',
     name: 'mcp-toolkit',
     sub: 'MCP PROTOCOL · TYPESCRIPT · STDIO',
-    memory: 'MCP 协议工程 · 工具资产复用 · 48 单测',
+    memory: 'MCP 协议工程 · 工具资产复用 · 50 单测',
     desc: '把散落各项目的手写工具能力，标准化为 8 个即插即用的 MCP 工具服务器。<strong>从 function calling 到 MCP 协议</strong>：travel-rank 的聚合排名、python 项目的 TC3 签名器直接复用为零重构的标准工具。',
-    tags: ['TypeScript', 'MCP 协议', 'JSON-RPC', 'zod', 'stdio', '48 单测'],
-    badges: ['MCP 协议工程', '工具资产复用', '48 单测'],
+    tags: ['TypeScript', 'MCP 协议', 'JSON-RPC', 'zod', 'stdio', '50 单测'],
+    badges: ['MCP 协议工程', '工具资产复用', '50 单测'],
     highlights: [
       '官方 MCP SDK + TypeScript：<strong>McpServer + StdioServerTransport（JSON-RPC over stdio）</strong>，任意宿主即插即用',
       '8 工具：热度聚合排名 / TC3 签名 / 只读 SQLite / 网页抽取 / 文本切块 / 日期计算 / JWT 验签 / 探活',
       '<strong>lib/tools 分层铁律</strong>：lib 层纯函数零 MCP 依赖，tools 层只做 zod 校验 + 转发',
-      '<strong>48 个 vitest 单测全绿</strong> + GitHub Actions CI（typecheck + build + test）',
+      '只读 SQLite 工具做<strong>三重约束</strong>：只允许 SELECT/WITH/PRAGMA + readOnly 打开 + 可读路径限定在 <code>MCP_SQLITE_ROOT</code> 根目录内',
+      '<strong>50 个 vitest 单测全绿</strong> + GitHub Actions CI（typecheck + build + test）',
     ],
     github: 'https://github.com/Dongnb66/mcp-toolkit',
     demo: 'npm i && npm run dev，接 MCP Inspector 即跑',
@@ -175,7 +176,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1156 条测试与断言'],
+    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1158 条测试与断言'],
   },
   {
     icon: '🚀',
