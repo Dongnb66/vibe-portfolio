@@ -302,7 +302,7 @@ const WorkbenchCover: React.FC = () => {
     'owner_id DEFAULT auth.uid() · 归属由库生成',
     '公共岗位库只读例外 · 无任何写策略',
   ];
-  const chips = ['10 表 RLS 双写', '779 项测试', '契约测试跨端', '扩展 0 网络请求'];
+  const chips = ['10 表 RLS 双写', '900+ 项测试', '契约测试跨端', '扩展 0 网络请求'];
   return (
     <svg viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMid slice" style={{ width: '100%', height: '100%' }}>
       <defs>
