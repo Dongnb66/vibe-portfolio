@@ -179,7 +179,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1163 条测试与断言'],
+    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1284 条测试与断言'],
   },
   {
     icon: '🚀',
