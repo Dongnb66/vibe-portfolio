@@ -14,7 +14,7 @@ export const profile = {
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
     '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub（早期软件杯 A3 参赛原型已重写演进并入主项目）。',
-    '测试基线：<strong>5 个项目共 1163 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
+    '测试基线：<strong>5 个项目共 1284 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
     'AI Coding 工作流：以 <strong>Claude Code、Codex、WorkBuddy</strong> 等 AI 智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。其中一次真实实验（检索层误拒率 69.4% 的失败证明与修复）已写成公开技术文章发布在掘金。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
@@ -23,7 +23,7 @@ export const profile = {
 export const stats = [
   { num: '5', label: 'GitHub Projects', sub: '2026.09 开源 · 全 MIT' },
   { num: '8', label: 'Node 状态图', sub: '5 LLM 智能体 + 2 记忆 + 1 ReAct' },
-  { num: '1163', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
+  { num: '1284', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
@@ -119,8 +119,11 @@ export const projects = [
     memory: '多租户隔离靠数据库不靠自觉 · 四端共用一套口径',
     desc: '求职全流程平台：岗位广场 → 投递台账 → 面试备战，Web / 微信小程序 / Chrome 扩展 / 本地抓取器四端共用一套数据与口径。<strong>最大亮点是把多租户隔离下沉到数据库</strong>——RLS 行级策略强制归属，不依赖应用层自觉；这套隔离本身也被写成了断言。',
     tags: ['React 19', 'TypeScript', 'PostgreSQL', 'RLS', 'Chrome MV3', '微信小程序', 'Playwright', '契约测试', 'Docker'],
-    badges: ['多租户架构', '四端复用', '779 项测试'],
+    badges: ['多租户架构', '四端复用', '900+ 项测试', '线上运行 · 有真实用户'],
     highlights: [
+      '<strong>真实使用</strong>：抖音发布后<strong>约 12 台真实浏览器</strong>访问（含少量验证身份，非精确真人计数），<strong>1 台跑通「装本地助手 → 抓取 → 入库」全链路</strong>；据真机反馈修掉 4 个只有真机会暴露的缺陷',
+      '<strong>Windows 本地助手</strong>：零依赖安装包（双击即装、开机自启、带停止与卸载）；Playwright 内核 · <strong>27 个站点接入 / 7 个实测可用</strong>（三态标注）· 串行 + 随机抖动 + 页数上限；只读公开页面、命中风控即停不绕',
+      '<strong>匿名计数与漏斗埋点</strong>：尊重 GPC；<strong>匿名端对两张表只能 INSERT、无任何 SELECT 权限</strong>；活跃与「装过助手」全部由事件表推导 —— 一条从未成功的 UPDATE 通道被整条删掉，而不是加补丁',
       '<strong>多租户隔离靠数据库不靠自觉</strong>：10 张私有表全部 <code>USING</code> + <code>WITH CHECK</code> 双写 RLS 策略——少了 WITH CHECK，UPDATE 就能把行改成别人的 <code>owner_id</code>，等于越权后门；归属列 <code>DEFAULT auth.uid()</code> 由库生成，客户端无从指定。前端不传 owner_id、写操作空返回即抛错，<strong>三条防线全写成断言</strong>',
       '<strong>把 PostgREST 的静默语义翻译成显式错误</strong>：RLS 拒绝写入时它返回的是空数组而不是报错，不翻译的话用户看到「保存成功」而数据根本没落库；insert / update / delete 三条写路径各自识别并抛错',
       '<strong>一套口径四端复用</strong>：Web 与微信小程序共用同一批表与同一套 RLS 约定；Chrome 扩展（<code>activeTab</code> + 零 <code>host_permissions</code>）只读当前页 DOM，<strong>全目录 0 次网络请求、数据不出本机</strong>；本地抓取器串行 + 随机抖动（2600–3640ms）+ 页数上限，只读公开接口、命中风控即停不绕',
