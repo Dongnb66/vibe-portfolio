@@ -1,5 +1,5 @@
 // 简历 / 作品集数据 — 来源：杨运栋 简历（2028 届 · AI 应用开发实习）+ 5 个 GitHub 开源项目
-// 口径与简历逐项对齐：5 个项目 = 163 + 908 + 71 + 79 + 50 = 1271 条测试
+// 口径与简历逐项对齐：5 个项目 = 163 + 908 + 92 + 79 + 50 = 1292 条测试
 // 5 个项目各设一个"最强记忆点"，避免同质化
 
 export const profile = {
@@ -14,7 +14,7 @@ export const profile = {
   intro: [
     '吉首大学张家界学院 <span class="tag">2024 级</span> 计算机科学与技术专业在读，大三。',
     '求职方向 <strong>AI Agent 后端开发</strong>。已独立完成 5 个端到端项目，全部 <span class="tag">MIT License</span> 开源在 GitHub（早期软件杯 A3 参赛原型已重写演进并入主项目）。',
-    '测试基线：<strong>5 个项目共 1271 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
+    '测试基线：<strong>5 个项目共 1292 条单测/冒烟断言</strong>（零 API Key 可跑）+ <strong>9 条防幻觉评测用例（6 常规 + 3 对抗）</strong>，常规集挂入 GitHub Actions CI。',
     'AI Coding 工作流：以 <strong>Claude Code、Codex、WorkBuddy</strong> 等 AI 智能体编程工具深度协作开发——需求拆解 → 生成 → 人工审校 → 测试验证，<strong>设计决策与代码验收由本人把关</strong>。其中一次真实实验（检索层误拒 25/36（69.4%）的失败证明与修复）已写成公开技术文章发布在掘金。',
     '对多智能体编排、RAG 防幻觉、LLM 调用工程有完整实战经验。<strong>日常实习可立即到岗</strong>，同时准备 2027 年 3–5 月暑期实习窗口，期望找到能独立交付模块的 AI Agent 实习岗位。',
   ],
@@ -23,7 +23,7 @@ export const profile = {
 export const stats = [
   { num: '5', label: 'GitHub Projects', sub: '2026.09 开源 · 全 MIT' },
   { num: '8', label: 'Node 状态图', sub: '5 LLM 智能体 + 2 记忆 + 1 ReAct' },
-  { num: '1271', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
+  { num: '1292', label: 'Tests', sub: '5 项目 · 零 Key 可跑 · CI 持续通过' },
   { num: '2027', label: '暑期实习窗口', sub: '日常实习亦可 · 可立即到岗' },
 ];
 
@@ -66,7 +66,7 @@ export const projects = [
       '5 智能体流水线：路由 Router / 发帖引导 PostGuide / 内容审核 Audit / 检索 Search / 撮合 Match',
       '完整账号体系：手机/邮箱/微信/QQ，<strong>首次扫码强校验</strong>',
       '<strong>React 18 + Vite 5 前端</strong>，JWT 双令牌 + RBAC、事务防并发、自实现 TTL+LRU 缓存',
-      '服务端共 <strong>71 项测试</strong>（48 行为断言 + 10 冒烟 + 13 缓存）：行为测试用 fetch 桩把模型换成可控脚本，断言"无 Key 时 0 次请求""模型 500 时违规拦截依然生效"',
+      '服务端共 <strong>92 项测试</strong>（48 行为断言 + 21 编排断言 + 10 冒烟 + 13 缓存）：行为测试用 fetch 桩把模型换成可控脚本，断言"无 Key 时 0 次请求""模型 500 时违规拦截依然生效"',
       '<strong>测试查出 2 个真 bug 并修复</strong>：seed 脚本的 process.exit 会杀掉启动中的服务、.env 里的 Key 永远读不到（ESM import 提升导致）',
       'Node 单一 runtime，部署 / 学习 / 二次开发都简单',
     ],
@@ -179,7 +179,7 @@ export const skills = [
     icon: '🧪',
     name: '测试驱动交付',
     desc: '端到端管线 + 官方签名测试向量 + 跨会话记忆，交付前可自动验证',
-    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1271 条测试与断言'],
+    list: ['pytest', 'vitest', 'node --test', 'JUnit', '防幻觉评测集', '1292 条测试与断言'],
   },
   {
     icon: '🚀',
