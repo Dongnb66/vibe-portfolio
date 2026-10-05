@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { profile, stats, projects, skills } from './data';
 import { ProjectCover } from './components/ProjectCover';
+import type { CoverKind } from './components/ProjectCover';
 import { PetPig } from './components/PetPig';
 
 /* ---------- 通用动效 hook：滚动淡入 ---------- */
@@ -287,7 +288,7 @@ function Projects() {
             style={{ transitionDelay: `${i * 0.08}s` }}
           >
             <div className="project-visual">
-              <ProjectCover kind={p.cover as 'python' | 'campus' | 'travel' | 'mcp' | 'a3' | 'pipeline' | 'java'} />
+              <ProjectCover kind={p.cover as CoverKind} />
               {p.id === 'travel-rank' && (
                 <div className="project-pig">
                   <PetPig size={140} />
