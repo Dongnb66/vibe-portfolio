@@ -188,6 +188,12 @@ export const skills = [
     list: ['Docker', 'docker-compose', '.env.example', 'README 中英双语'],
   },
   {
+    icon: '🐧',
+    name: 'Linux 服务器配置',
+    desc: '用一套脚本把服务器的网络、共享服务与防火墙全部落地，幂等可重复执行',
+    list: ['netplan 静态 IP', 'isc-dhcp-server', 'NFS 导出与权限映射', 'Samba 共享', 'UFW 端口策略', 'systemd 服务管理'],
+  },
+  {
     icon: '⚛️',
     name: '前端（全栈互补）',
     desc: '能独立做交互前端，用原生或框架按场景取舍',

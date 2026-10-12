@@ -350,7 +350,7 @@ function Skills() {
         技能 <span className="grad">地图</span>
       </h2>
       <p className="section-desc reveal">
-        不是堆砌技术名词，而是按"做了哪些事"分类 —— 11 个领域，每个都有真实项目背书。
+        不是堆砌技术名词，而是按"做了哪些事"分类 —— 12 个领域，每个都有真实项目背书。
       </p>
 
       <div className="skills-grid reveal-stagger">
